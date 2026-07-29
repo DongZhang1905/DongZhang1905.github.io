@@ -25,8 +25,6 @@ const copy = {
     eyebrow: "Physics · High-Energy Theory · AI for Science",
     heroRole: "Undergraduate Student in Physics",
     heroInstitution: "Department of Physics, Tianjin University",
-    heroNote:
-      "Exploring fundamental physics with theoretical and computational methods.",
     researchTitle: "Research Directions",
     researchKicker: "Interests",
     theoryTitle: "High-Energy Theory",
@@ -77,7 +75,6 @@ const copy = {
     eyebrow: "物理学 · 高能理论 · AI for Science",
     heroRole: "物理系本科生",
     heroInstitution: "天津大学物理系",
-    heroNote: "使用理论与计算方法探索基础物理问题。",
     researchTitle: "研究方向",
     researchKicker: "研究兴趣",
     theoryTitle: "高能理论",
@@ -200,7 +197,6 @@ export default function Home() {
             </h1>
             <p className="hero-role">{t.heroRole}</p>
             <p className="hero-institution">{t.heroInstitution}</p>
-            <p className="hero-note">{t.heroNote}</p>
 
             <div className="research-tags" aria-label="Research interests">
               <span>High-Energy Theory</span>

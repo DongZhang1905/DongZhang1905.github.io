@@ -404,19 +404,11 @@ a:focus-visible {
   font-size: 14px;
 }
 
-.hero-note {
-  max-width: 590px;
-  margin: 22px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
 .research-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .research-tags span {
@@ -878,10 +870,6 @@ footer a {
   .hero-role {
     margin-top: 27px;
     font-size: 17px;
-  }
-
-  .hero-note {
-    font-size: 13px;
   }
 
   .hero-orbit-one {
