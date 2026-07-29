@@ -29,6 +29,8 @@ await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(new URL("../dist/client/", import.meta.url), outputRoot, {
   recursive: true,
+  filter: (source) =>
+    !source.includes("_vinext_fonts") && !source.endsWith(".woff2"),
 });
 await copyFile(
   new URL("../public/zhangdong-cv.pdf", import.meta.url),
