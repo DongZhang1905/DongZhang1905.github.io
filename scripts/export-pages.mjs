@@ -24,7 +24,12 @@ if (!response.ok) {
   throw new Error(`Static export failed with HTTP ${response.status}`);
 }
 
-const html = await response.text();
+// GitHub Pages serves one static document, without an RSC navigation endpoint.
+// Register before hydration so even an early fragment click stays native.
+const html = (await response.text()).replace(
+  "<head>",
+  '<head><script>window.addEventListener("popstate", function(event) { event.stopImmediatePropagation(); }, true);</script>',
+);
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(new URL("../dist/client/", import.meta.url), outputRoot, {

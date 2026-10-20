@@ -66,6 +66,6 @@ test("keeps the bilingual interface and project assets wired", async () => {
   await access(new URL("../public/images/curiosity-studio.png", import.meta.url));
   await access(new URL("../public/images/tju-emblem.jpg", import.meta.url));
   await access(new URL("../public/fonts/nunito-latin-variable.woff2", import.meta.url));
-  await access(new URL("../public/fonts/lxgw-wenkai-medium.woff2", import.meta.url));
+  await access(new URL("../public/fonts/dong-rounded-chinese.woff2", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
 });

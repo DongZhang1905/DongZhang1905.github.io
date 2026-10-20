@@ -21,7 +21,9 @@ Jekyll installation or a fork of its runtime.
 - Contact navigation linking directly to the contact section.
 - A collapsed publications / projects section until public entries are ready.
 - Responsive navigation and layouts for desktop and mobile.
-- Locally hosted images and rounded typography using Nunito and LXGW WenKai.
+- Native fragment navigation and browser scroll restoration for this static,
+  single-page deployment; fragment history does not invoke the RSC router.
+- Locally hosted images and rounded typography using Nunito and ChillRoundF.
   No external font requests, image services, or new dependencies.
 
 The hero illustration was generated with OpenAI image generation around the
@@ -71,10 +73,11 @@ The current visual design references
 The university emblem comes from the official
 [Tianjin University branding page](https://tju.edu.cn/tdgk/tdbs.htm).
 Fonts: [Nunito](https://fonts.google.com/specimen/Nunito) from Google Fonts
-and [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) via Fontsource.
+and [ChillRoundF](https://github.com/Warren2060/ChillRound).
 Both use the SIL Open Font License; license files are included with the fonts.
 The Chinese font is subset to the current page's characters for faster loading;
 refresh this subset when adding new Chinese copy.
+The subset is named Dong Rounded, respecting the upstream reserved font name.
 The original site's layout referenced
 [WD7ang/WowPage](https://github.com/WD7ang/WowPage); its existing MIT license
 notice is retained.

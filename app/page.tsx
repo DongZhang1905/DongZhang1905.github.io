@@ -51,6 +51,10 @@ export default function Home() {
 
   useEffect(() => { document.documentElement.lang = language === "zh" ? "zh-CN" : "en"; }, [language]);
   useEffect(() => { setDark(window.matchMedia("(prefers-color-scheme: dark)").matches); }, []);
+  useEffect(() => {
+    // Keep browser scroll restoration after the framework initializes.
+    window.history.scrollRestoration = "auto";
+  }, []);
 
   return (
     <div className="site-shell" data-theme={dark ? "dark" : "light"}>
