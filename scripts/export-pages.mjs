@@ -1,4 +1,4 @@
-import { copyFile, cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 
 const outputRoot = new URL("../docs/", import.meta.url);
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -29,13 +29,8 @@ await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(new URL("../dist/client/", import.meta.url), outputRoot, {
   recursive: true,
-  filter: (source) =>
-    !source.includes("_vinext_fonts") && !source.endsWith(".woff2"),
+  filter: (source) => !source.includes("_vinext_fonts"),
 });
-await copyFile(
-  new URL("../public/zhangdong-cv.pdf", import.meta.url),
-  new URL("zhangdong-cv.pdf", outputRoot),
-);
 await writeFile(new URL("index.html", outputRoot), html, "utf8");
 await writeFile(new URL("404.html", outputRoot), html, "utf8");
 await writeFile(new URL(".nojekyll", outputRoot), "", "utf8");

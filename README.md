@@ -10,19 +10,25 @@ Jekyll installation or a fork of its runtime.
 
 ## Content and design
 
-- A single profile introduction with email, GitHub, and PDF CV links.
+- A single profile introduction with email and GitHub links.
 - A fixed introduction prefix with a typing / deleting loop for research interests;
   reduced-motion visitors see static text.
 - English / Chinese language switching, including the document language.
 - Light and dark themes, initially following the visitor's system preference.
-- Research interests and education presented as compact academic records.
+- Four illustrated research interests: high-energy theory, AI for Science,
+  learning theory, and embodied intelligence.
+- Education with the official Tianjin University emblem.
+- Contact navigation linking directly to the contact section.
 - A collapsed publications / projects section until public entries are ready.
 - Responsive navigation and layouts for desktop and mobile.
-- No external fonts, image services, or new dependencies.
+- Locally hosted images and rounded typography using Nunito and LXGW WenKai.
+  No external font requests, image services, or new dependencies.
 
-The biography remains intentionally blank. The `dz.` monogram is decorative;
-it does not represent a photograph. Existing academic facts and the PDF CV
-are retained.
+The hero illustration was generated with OpenAI image generation around the
+theme of books, stars, philosophy, and a curious robot. Decorative research
+drawings are inline SVGs. The cream, forest-green, and terracotta palette
+supports both light and dark themes. Existing academic facts are retained;
+the CV download and publicly served PDF have been removed.
 
 ## Local development
 
@@ -53,7 +59,8 @@ GitHub Pages must use **GitHub Actions** as its build source.
 - `app/page.tsx`: bilingual content, page structure, and theme controls.
 - `app/globals.css`: typography, color themes, and responsive layout.
 - `app/layout.tsx`: page metadata.
-- `public/zhangdong-cv.pdf`: existing English CV.
+- `public/images/`: the hero illustration and university emblem.
+- `public/fonts/`: self-hosted webfonts and their OFL licenses.
 - `.github/workflows/deploy-pages.yml`: GitHub Pages deployment.
 - `scripts/export-pages.mjs`: static export.
 
@@ -61,6 +68,13 @@ GitHub Pages must use **GitHub Actions** as its build source.
 
 The current visual design references
 [al-folio](https://github.com/alshedivat/al-folio).
+The university emblem comes from the official
+[Tianjin University branding page](https://tju.edu.cn/tdgk/tdbs.htm).
+Fonts: [Nunito](https://fonts.google.com/specimen/Nunito) from Google Fonts
+and [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) via Fontsource.
+Both use the SIL Open Font License; license files are included with the fonts.
+The Chinese font is subset to the current page's characters for faster loading;
+refresh this subset when adding new Chinese copy.
 The original site's layout referenced
 [WD7ang/WowPage](https://github.com/WD7ang/WowPage); its existing MIT license
 notice is retained.

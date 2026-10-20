@@ -35,7 +35,14 @@ test("server-renders Dong Zhang's academic homepage", async () => {
   assert.match(html, /High-Energy Theory/);
   assert.match(html, /AI for Science/);
   assert.match(html, /Tianjin University/);
-  assert.match(html, /href="\/zhangdong-cv\.pdf"/);
+  assert.match(html, /Learning Theory/);
+  assert.match(html, /Embodied Intelligence/);
+  assert.match(html, /href="#contact"/);
+  assert.match(html, /id="contact"/);
+  assert.match(html, /src="\/images\/tju-emblem\.jpg"/);
+  assert.match(html, /src="\/images\/curiosity-studio\.png"/);
+  assert.doesNotMatch(html, /zhangdong-cv\.pdf/);
+  assert.doesNotMatch(html, /class="eyebrow"/);
   assert.match(html, /href="https:\/\/github\.com\/DongZhang1905"/);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|Starter Project/i);
 });
@@ -55,6 +62,10 @@ test("keeps the bilingual interface and project assets wired", async () => {
   assert.doesNotMatch(layout, /codex-preview|Starter Project|_sites-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 
-  await access(new URL("../public/zhangdong-cv.pdf", import.meta.url));
+  await assert.rejects(access(new URL("../public/zhangdong-cv.pdf", import.meta.url)));
+  await access(new URL("../public/images/curiosity-studio.png", import.meta.url));
+  await access(new URL("../public/images/tju-emblem.jpg", import.meta.url));
+  await access(new URL("../public/fonts/nunito-latin-variable.woff2", import.meta.url));
+  await access(new URL("../public/fonts/lxgw-wenkai-medium.woff2", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
 });
