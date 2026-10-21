@@ -19,7 +19,9 @@ Jekyll installation or a fork of its runtime.
   learning theory, and embodied intelligence.
 - Education with the official Tianjin University emblem.
 - Contact navigation linking directly to the contact section.
-- A collapsed publications / projects section until public entries are ready.
+- A visible publications section featuring the MadStree preprint, complete
+  authorship, a bilingual summary, and arXiv / PDF links.
+- A collapsed projects section until public entries are ready.
 - Responsive navigation and layouts for desktop and mobile.
 - Native fragment navigation and browser scroll restoration for this static,
   single-page deployment; fragment history does not invoke the RSC router.

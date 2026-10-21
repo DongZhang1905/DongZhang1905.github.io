@@ -19,8 +19,9 @@ const copy = {
     embodiedTitle: "Embodied Intelligence", embodiedBody: "Exploring the connection between perception, action, and learning through interaction with the physical world.",
     educationTitle: "Education", university: "Tianjin University", period: "2023 — Present",
     degree: "B.Sc. candidate in Physics", educationNote: "Department of Physics · Tianjin, China",
-    workTitle: "Publications & projects", workNote: "Public entries will be added here when available.",
-    publicationsTitle: "Publications", publicationsNote: "No public publications or preprints listed yet.",
+    workNote: "Public entries will be added here when available.",
+    publicationsTitle: "Publications", preprint: "Preprint",
+    paperSummary: "A Mathematica package for tree-level cosmological correlators, based on recursive reduction and dlog-form differential equations.",
     projectsTitle: "Projects", projectsNote: "Selected research and open-source projects will be added here.",
     contactTitle: "Get in touch", contactNote: "You can reach me by email.",
     footer: "Academic homepage", inspired: "Design inspired by al-folio",
@@ -37,8 +38,9 @@ const copy = {
     embodiedTitle: "具身智能", embodiedBody: "探索感知、行动与学习之间的联系，以及智能如何在与物理世界的交互中形成。",
     educationTitle: "教育经历", university: "天津大学", period: "2023 — 至今",
     degree: "物理学学士在读", educationNote: "物理系 · 中国天津",
-    workTitle: "论文与项目", workNote: "公开成果将在此更新。",
-    publicationsTitle: "论文", publicationsNote: "暂无已列出的公开论文或预印本。",
+    workNote: "公开成果将在此更新。",
+    publicationsTitle: "论文", preprint: "预印本",
+    paperSummary: "基于递归约化与 dlog 形式微分方程，自动计算树级 de Sitter 宇宙学关联函数的 Mathematica 工具包。",
     projectsTitle: "项目", projectsNote: "研究项目与开源项目将在整理后更新于此。",
     contactTitle: "联系我", contactNote: "欢迎通过邮件联系。", footer: "学术主页", inspired: "设计参考 al-folio",
   },
@@ -126,16 +128,33 @@ export default function Home() {
             </a>
           </article>
         </section>
-        <section className="work-section" aria-label={t.workTitle}>
+        <section className="academic-section" id="publications" aria-labelledby="publications-title">
+          <SectionHeading index="03" id="publications-title" title={t.publicationsTitle} />
+          <article className="publication-entry">
+            <div className="publication-meta">
+              <time dateTime="2026-10-20">2026</time>
+              <span className="publication-status">{t.preprint}</span>
+            </div>
+            <div className="publication-copy">
+              <h3><a href="https://arxiv.org/abs/2610.28526" target="_blank" rel="noreferrer">MadStree: automated evaluation of tree-level de Sitter correlators</a></h3>
+              <p className="publication-authors">Jiaqi Chen, Yi-Xiao Tao, Xinyi Wang, <strong>Dong Zhang</strong></p>
+              <p className="publication-abstract">{t.paperSummary}</p>
+              <div className="publication-links">
+                <a href="https://arxiv.org/abs/2610.28526" target="_blank" rel="noreferrer">arXiv:2610.28526<Arrow /></a>
+                <a href="https://arxiv.org/pdf/2610.28526" target="_blank" rel="noreferrer">PDF<Arrow /></a>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section className="work-section" aria-label={t.projectsTitle}>
           <details className="work-details">
             <summary>
-              <span className="section-index" aria-hidden="true">03</span>
-              <span className="work-summary"><span className="work-title">{t.workTitle}</span><span className="work-note">{t.workNote}</span></span>
+              <span className="section-index" aria-hidden="true">04</span>
+              <span className="work-summary"><span className="work-title">{t.projectsTitle}</span><span className="work-note">{t.workNote}</span></span>
               <span className="disclosure-mark" aria-hidden="true">+</span>
             </summary>
             <div className="work-entries">
-              <div id="publications"><h3>{t.publicationsTitle}</h3><p>{t.publicationsNote}</p></div>
-              <div id="projects"><h3>{t.projectsTitle}</h3><p>{t.projectsNote}</p></div>
+              <div id="projects"><p>{t.projectsNote}</p></div>
             </div>
           </details>
         </section>

@@ -35,6 +35,11 @@ test("server-renders Dong Zhang's academic homepage", async () => {
   assert.match(html, /High-Energy Theory/);
   assert.match(html, /AI for Science/);
   assert.match(html, /Tianjin University/);
+  assert.match(html, /MadStree: automated evaluation of tree-level de Sitter correlators/);
+  assert.match(html, /Jiaqi Chen, Yi-Xiao Tao, Xinyi Wang, <strong>Dong Zhang<\/strong>/);
+  assert.match(html, /href="https:\/\/arxiv\.org\/abs\/2610\.28526"/);
+  assert.match(html, /href="https:\/\/arxiv\.org\/pdf\/2610\.28526"/);
+  assert.doesNotMatch(html, /No public publications or preprints listed yet/);
   assert.match(html, /Learning Theory/);
   assert.match(html, /Embodied Intelligence/);
   assert.match(html, /href="#contact"/);
