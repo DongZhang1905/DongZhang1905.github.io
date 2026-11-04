@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}<script src="/analytics.js" defer /></body>
     </html>
   );
 }

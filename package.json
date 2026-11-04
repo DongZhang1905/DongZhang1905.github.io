@@ -10,7 +10,7 @@
     "build": "vinext build",
     "start": "vinext start",
     "export:pages": "npm run build && node scripts/export-pages.mjs",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
     "lint": "eslint app scripts tests worker vite.config.ts next.config.ts"
   },
   "dependencies": {

@@ -58,6 +58,26 @@ The included GitHub Actions workflow runs on pushes to `main` and publishes
 `docs/` to [dongzhang1905.github.io](https://dongzhang1905.github.io/).
 GitHub Pages must use **GitHub Actions** as its build source.
 
+## Visitor analytics
+
+The homepage sends new page loads and fragment-navigation events to a separate
+Sites backend. The dashboard is at
+https://dong-zhang-visitor-analytics.pink-vine-8053.chatgpt.site/.
+Sign in with the owner's ChatGPT account to read records; other accounts and
+anonymous visitors cannot access the records API.
+
+Records contain the server time, a random tab-session ID, the homepage section,
+referring hostname, approximate network region, browser family and device class.
+No complete IP address, browser fingerprint, real name or email is collected.
+Session counts are not counts of people. Previous visits cannot be recovered.
+Do Not Track, Global Privacy Control and the footer opt-out are respected.
+Source URLs are reduced to hostnames; query strings are never stored.
+
+`public/analytics.js` contains the public collector URL. It contains no secret.
+GitHub Pages remains a static website. The database and protected records API
+run separately; backend source and deployment instructions are in the backend
+project delivered alongside this change.
+
 ## Main files
 
 - `app/page.tsx`: bilingual content, page structure, and theme controls.

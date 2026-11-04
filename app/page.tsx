@@ -166,6 +166,7 @@ export default function Home() {
       <footer className="site-footer">
         <span>© {new Date().getFullYear()} Dong Zhang <span className="footer-dot">·</span> {t.footer}</span>
         <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noreferrer">{t.inspired}<Arrow /></a>
+        <AnalyticsNotice language={language} />
       </footer>
     </div>
   );
@@ -175,6 +176,20 @@ const introductions = {
   en: { prefix: "Exploring ", words: ["philosophy.", "embodied intelligence.", "learning theory.", "high-energy theory.", "AI for Science."], accessible: "Exploring philosophy, embodied intelligence, learning theory, high-energy theory and AI for Science." },
   zh: { prefix: "我在探索 ", words: ["哲学。", "具身智能。", "学习理论。", "高能理论。", "AI for Science。"], accessible: "我在探索哲学、具身智能、学习理论、高能理论与 AI for Science。" },
 };
+
+function AnalyticsNotice({ language }: { language: Language }) {
+  const [off, setOff] = useState(false);
+  useEffect(() => {
+    try { setOff(localStorage.getItem("homepage-analytics-off") === "1"); } catch { /* Storage may be disabled. */ }
+  }, []);
+  function toggle() {
+    const next = !off;
+    try { localStorage.setItem("homepage-analytics-off", next ? "1" : "0"); } catch { /* Still applies for the open page. */ }
+    setOff(next);
+    window.dispatchEvent(new CustomEvent("homepage-analytics-toggle", { detail: { off: next } }));
+  }
+  return <span className="analytics-notice">{language === "zh" ? "本站记录匿名访问及大致地区，不识别真实身份。" : "Anonymous visit analytics and approximate region; no real identity collected."} <button type="button" onClick={toggle}>{language === "zh" ? (off ? "已关闭统计 · 重新开启" : "关闭访问统计") : (off ? "Analytics off · enable" : "Opt out")}</button></span>;
+}
 
 function Typewriter({ language }: { language: Language }) {
   const { prefix, words, accessible } = introductions[language];
